@@ -24,9 +24,11 @@
                         <li>
                             <a href="/" class="nav-link" >Notas</a>
                         </li>
+                        {% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'nueva_nota' %}" class="nav-link" >Crear Nota</a>
                         </li>
+                        {% endif %}
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
                                 Log out
