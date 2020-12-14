@@ -28,12 +28,19 @@
                         <li>
                             <a href="{% url 'nueva_nota' %}" class="nav-link" >Crear Nota</a>
                         </li>
-                        {% endif %}
-                        <li>
-                            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                                Log out
-                            </button>
+                            <h2><span class="badge badge-pill badge-light">{{ user.username }} </span></h2>
                         </li>
+                        <li>
+                            <a href="{% url 'logout' %}" type="button" class="btn btn-warning">Log out</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+                                <span class="fa fa-lock"></span>
+                                Login
+                            </a>
+                        </li>
+                        {% endif %}
 
                     </ul>
                 </div>

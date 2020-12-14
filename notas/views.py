@@ -3,13 +3,14 @@ from django.shortcuts import redirect
 from .models import Nota
 from django.utils import timezone
 from .forms import NotaForm
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def muro(request):
     notas = Nota.objects.all()
     return render(request,'notas/muro.html',{'notas': notas})
 
+@login_required
 def nueva_nota(request):
     if request.method == "POST":
         formulario = NotaForm(request.POST)
@@ -22,6 +23,8 @@ def nueva_nota(request):
         formulario = NotaForm()
     return render(request, 'notas/editar_nota.html', {'formulario': formulario})
 
+
+@login_required
 def editar_nota(request, pk):
     publicacion = get_object_or_404(Nota, pk=pk)
     if request.method == "POST":
