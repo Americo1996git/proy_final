@@ -2,5 +2,5 @@ Proyecto final Programación Comercial.
 Aplicación Muro de notas.
 Desarrolladores:
 
-Daniel Tzunun 
+Daniel Tzunun y 
 Laura Morales 
