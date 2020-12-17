@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-footer">
                     {% if user.is_authenticated %}
-                    <button class="btn btn-danger" >Eliminar</button>
+                    <a href="{% url 'eliminar_nota' pk=nota.pk %}" onClick="return confirm ('¿Está seguro de borrar la nota?');"  class="btn btn-danger" >Eliminar</a>
                     {% endif %}
                     </div>
                 </div>

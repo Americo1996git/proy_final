@@ -38,3 +38,10 @@ def editar_nota(request, pk):
     else:
         formulario = NotaForm(instance=publicacion)
     return render(request, 'notas/editar_nota.html', {'formulario': formulario})
+
+@login_required
+def eliminar_nota(request,pk):
+    publicacion = get_object_or_404(Nota, pk=pk)
+    publicacion.delete()
+   
+    return redirect('/')
